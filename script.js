@@ -51,15 +51,21 @@ const usuarios2 = [
 
 function formatearNombre(Nombre)
 {
-    Nombre = (Nombre || "").trim();
+    const inputEl = document.getElementById('nombre');
+    Nombre = (Nombre || (inputEl ? inputEl.value : '')).trim();
+
     if (Nombre.length === 0) {
-        document.getElementById("resultado1").innerText = "";
+        if (inputEl) inputEl.focus();
+        document.getElementById("resultado1").innerText = "Por favor ingresa un nombre.";
         return "";
     }
 
-    const nombreNuevo = Nombre.charAt(0).toUpperCase() + Nombre.slice(1).toLowerCase();
-    document.getElementById("resultado1").innerText = nombreNuevo;
+    // Capitalizar la primera letra de cada palabra, el resto en minúsculas
+    const nombreNuevo = Nombre.split(/\s+/)
+        .map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+        .join(' ');
 
+    document.getElementById("resultado1").innerText = nombreNuevo;
     return nombreNuevo;
 }
 
