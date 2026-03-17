@@ -34,9 +34,15 @@
     
     <h1>EJ3: NUMERO MAYOR</h1>
    <form >
-      <input type="number" id="Numero1">
-      
-        <button type="button" onclick="NumeroMax(document.getElementById('Numero1').value)">
+      <input type="number" id="Numero1" placeholder="Número 1">
+      <input type="number" id="Numero2" placeholder="Número 2">
+      <input type="number" id="Numero3" placeholder="Número 3">
+
+        <button type="button" onclick="document.getElementById('resultado3').innerText = maximo(
+            document.getElementById('Numero1').value,
+            document.getElementById('Numero2').value,
+            document.getElementById('Numero3').value
+        )">
             Enviar
         </button>
         
@@ -45,5 +51,49 @@
    </form>
    
     <p id="resultado3"></p>
+
+    <h1>EJ4: VALIDAR PASSWORD</h1>
+  <input type="text" id="password">
+      
+        <button type="button" onclick="validarPassword(document.getElementById('password').value)">
+            Enviar
+        </button>
+
+   
+   </form>
+    
+     <p id="resultado4"></p>
+     
+         <h1>EJ5: SUMAR ARRAYS</h1>
+  <input type="text" id="numeros5" placeholder="Ingresa números separados por comas">
+      
+        <button type="button" onclick="sumarArrays(document.getElementById('numeros5').value.split(','))">
+            Enviar
+        </button>
+
+   
+   </form>
+    
+     <p id="resultado5"></p>
+
+
+             <h1>EJ6: MAYOR NÚMERO</h1>
+  <input type="text" id="numeros6" placeholder="Ingresa números separados por comas">
+      
+        <button type="button" onclick="mayorNumero(document.getElementById('numeros6').value.split(','))">
+            Enviar
+        </button>
+
+   
+   </form>
+    
+     <p id="resultado6"></p>
+
+<h1>EJ7: FILTAR PARES</h1>
+<input type="text" id="numeros7" placeholder="Ingresa números separados por comas">
+      
+        <button type="button" onclick="filtrarPares(document.getElementById('numeros7').value.split(','))">
+            Enviar
+        </button>
 </body>
 </html>
